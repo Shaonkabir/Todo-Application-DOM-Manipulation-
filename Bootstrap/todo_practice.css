@@ -1,0 +1,40 @@
+.delete-icon {
+	background: red;
+	color: white;
+	cursor: pointer;
+	padding: 7px 23px;
+	font-weight: bold;
+}
+.delete-icon:hover {
+    background: green;
+}
+
+.main-item {
+    font-size: 20px;
+    font-weight: bold
+}
+.main-item:hover {
+    border-bottom: 1px dashed green;
+    font-weight: normal;
+}
+
+.book-add-btn {
+	width: auto;
+	margin-left: auto;
+	cursor: pointer;
+}
+
+
+
+.container {
+    text-align: center;
+    padding-top: 50px;
+}
+.container h3 {
+	font-size: 29px;
+	font-weight: bold;
+	color: green;
+	letter-spacing: 4px;
+	font-style: italic;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book List Application</title>
+
+    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./Bootstrap/todo_practice.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="bookList">
+            <h3>Book List Application</h3>
+        </div>
+        <div class="main">
+                <input type="text" placeholder="Book Name" class="book form-control">
+                <input type="text" placeholder="Author Name" class="author form-control">
+                <button type="submit" class="book-add-btn btn btn-success">Add Items</button>
+            
+            <ul class="book-wrap list-group">
+
+            </ul>
+            <!--Experimental Input Field  -->
+            <input type="text" placeholder="Do something" class="form-control experiment">
+        </div>
+    </div>
+
+<script src="./Bootstrap/jquery-3.3.1.min.js"></script>
+<script src="./Bootstrap/bootstrap.min.js"></script>
+<script>
+    // My bookList Application Scripts
+const book = document.querySelector('.book');
+const author = document.querySelector('.author');
+const addBtn = document.querySelector('.book-add-btn');
+const ul = document.querySelector('.book-wrap');
+
+
+
+function addBook(ul,data) {
+    const li = document.createElement('li');
+    li.classList = 'list-group-item d-flex text-left main-item';
+    li.innerHTML = data;
+
+    // close icon:
+    const span =document.createElement('span');
+    span.innerHTML = 'Delete';
+    span.classList = 'ml-auto delete-icon ';
+
+    span.addEventListener('click', (e) => {
+        ul.removeChild(li)
+    })
+
+    li.appendChild(span)
+    ul.appendChild(li)
+
+}
+
+// Button Click Events:
+addBtn.addEventListener('click' ,(e) => {
+    addBook(ul,inputField.value);
+    inputField.value = ''
+})
+
+
+// Store data on LocalStroge
+// when a data will be input that'll be stored and updated on localStroge
+// Unless the 'Delete' button is clicked the data will be available from localStroge
+// All data will be updated as JSON data format
+// Data will be accessable when needed.
+
+const experimentField = document.querySelector('.experiment');
+
+experimentField.addEventListener('keypress' , (e) => {
+    if(e.keyCode === 13) {
+        const inputValue = e.target.value;
+        const storedData = [];
+        storedData.push(inputValue)
+        e.target.value = ''
+
+        var anotherData = localStorage.setItem(storedData.toString(),inputValue);
+
+        var mainData = localStorage.getItem(storedData.toString(),inputValue);
+
+        addBook(ul,mainData)
+
+
+       
+
+
+    }
+})
+
+
+    
+</script>
+
+</body>
+</html>

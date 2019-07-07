@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Book List</title>
+	<link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- My Book List Application -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 offset-md-1 text-center">
+				<h3 class="heading">Book List <span class="demo"></span></h3>
+				<div class="wrap">
+					<input type="text" id="input" placeholder="Enter your Book Name to Entry" class = "searchBox">
+					<input type="submit" class="add-btn" value="Add Book">
+					<ul class="checkList list-group">
+						<!-- List will be added here from user input -->
+					</ul>
+				</div>
+				<input type="text" placeholder="Search your Book" id="bookSearch" class = "searchBox">
+				<input type="submit" value="Search" id="bookSearchBtn" class="search-btn">
+			</div>
+		</div>
+	</div>
+	<!-- Scripts : jquery and bootstrap -->
+	<script src="Bootstrap/jquery-3.3.1.min.js"></script>
+	<script src="Bootstrap/bootstrap.min.js"></script>
+
+	<!-- Our Main Script -->
+	<script src="app.js"></script>
+</body>
+</html>
